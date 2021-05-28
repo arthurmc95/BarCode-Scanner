@@ -23,19 +23,28 @@ $(document).on("click", "#codigo", function(){
 
    cordova.plugins.barcodeScanner.scan(
       function (result) {
-          alert("We got a barcode\n" +
-                "Resultado: " + result.text + "\n" +
-                "Formato: " + result.format + "\n" +
-                "Cancelado: " + result.cancelled);
+
+        document.write("<h1 style='font-family: arial;font-size: large; text-align: center; justify-content: center; margin-top: 5vh;'>Temos um Código de Barras!\n\n <br>" + 
+        "Resultado: " + result.text + "\n\n <br>" + 
+        "Formato: " + result.format + "\n\n<br>" + 
+        "Cancelado: " + result.cancelled + "</h1>");
+          
+          // alert("We got a barcode\n" +
+          //       "Resultado: " + result.text + "\n" +
+          //       "Formato: " + result.format + "\n" +
+          //       "Cancelado: " + result.cancelled);
+                
       },
+
       function (error) {
           alert("Scanning failed: " + error);
+          document.write("<h1 style='font-family: arial;font-size: large; text-align: center; justify-content: center; margin-top: 5vh;'>Operação Cancelada!\n\n <br>" + error + "</h1>");
       },
       {
           preferFrontCamera : false, // iOS and Android
           showFlipCameraButton : true, // iOS and Android
           showTorchButton : true, // iOS and Android
-          torchOn: true, // Android, launch with the torch switched on (if available)
+          torchOn: false, // Android, launch with the torch switched on (if available)
           saveHistory: true, // Android, save scan history (default false)
           prompt : "Place a barcode inside the scan area", // Android
           resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
@@ -60,7 +69,8 @@ $(document).on("click", "#codigo", function(){
       states[Connection.CELL]     = 'Cell generic connection';
       states[Connection.NONE]     = 'No network connection';
 
-      alert('Connection type: ' + states[networkState]);
+      document.write("<h1 style='font-family: arial; text-align: center; justify-content: space-around; margin-top: 5vh;'>Tipo de conexão: </h1>" + states[networkState]);
+      // alert('Connection type: ' + states[networkState]);
   }
 $(document).on("click", "#conexao", function(){
   testarConexao();

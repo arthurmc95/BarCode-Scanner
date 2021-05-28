@@ -1,8 +1,26 @@
 /**/
+body{
+  margin-top: 5.7vh;
+}
 h2{
 color: black;
+justify-content: space-around;
+text-align: center;
+padding-bottom: 1vh;
+}
+#camera, #codigo, #conexao{
+  font-weight: bold;
+ background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 26%, rgba(0,212,255,1) 100%);
+border: rgba(9,9,121,1) 26%;
+  color: white;
 }
 .imagem{
   height: 200px;
   width: 100%;
 }
+.texto{
+  color: orange;
+}
+#texto{
+  color: orange;
